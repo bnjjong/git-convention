@@ -1,0 +1,27 @@
+buildscript {
+    repositories {
+
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        // lombok
+        classpath "io.franzbecker:gradle-lombok:5.0.0"
+        // commitlint
+        classpath "ru.netris:commitlint-plugin:1.4.1"
+        classpath "com.star-zero.gradle:githook:1.2.1"
+    }
+}
+
+allprojects {
+    group = 'io.jjong'
+    version = '1.0'
+
+    repositories {
+        mavenLocal()    // maven local cache repository
+        mavenCentral()
+    }
+    apply from : "${project.getRootDir()}/gradle/common.gradle"
+    apply from : "${project.getRootDir()}/gradle/git.lint.gradle"
+}

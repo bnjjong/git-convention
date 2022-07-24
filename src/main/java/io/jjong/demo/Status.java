@@ -8,9 +8,6 @@
 
 package io.jjong.demo;
 
-import lombok.Getter;
-import lombok.ToString;
-
 /**
  * create on 2022/07/24. create by IntelliJ IDEA.
  *
@@ -22,12 +19,6 @@ import lombok.ToString;
  * @see
  * @since 1.0
  */
-@Getter
-@ToString
-public class User {
-  private String name;
-  private int age;
-  private Address address;
-  private Status status;
-
+public enum Status {
+  ACTIVE, INACTIVE
 }
